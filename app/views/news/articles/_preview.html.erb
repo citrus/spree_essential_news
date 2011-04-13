@@ -1,0 +1,18 @@
+<div class="post-preview">
+
+  <div class="post-title">
+    <h2><%= link_to h(article.title), article_seo_path(post) %></h2>
+    <h5><%= date_full(article.posted_at) %></h5>
+  </div>
+
+  <% if article.has_images? %>
+    <p class="post-images"><%= link_to image_tag(article.images.first.attachment.url, :alt => article.title), article_seo_path(post) %></p>
+  <% end %>
+
+  <%= article.rendered_preview %>
+  
+  <br class="clear" />
+  
+  <p><%= link_to t('.read_more'), article_seo_path(post) %></p>
+  
+</div>

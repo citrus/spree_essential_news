@@ -1,0 +1,31 @@
+<div class="post-archive">
+  <% articles.group_by(&:year).each do |year, articles_by_year| %>
+    <h4 class="year"><%= link_to year, article_date_path(year) %></h4>
+    <% index = 0 %>
+    <% articles_by_year.group_by(&:month).each do |month, articles_by_month| %>
+      <div class="month<%= ' alt' if (index += 1) % 2 == 0 %>">
+        <h5 class="month"><%= link_to "#{Date::MONTHNAMES[month]} #{year}", article_date_path(year, month) %></h5>
+        <ul class="archive">
+          <% articles_by_month.group_by(&:day).each do |day, articles_by_day| %>
+            <li>    
+              <span class="day">
+                <%= link_to day, article_date_path(year, month, day) %>
+              </span>
+              <ul class="articles">
+                <% articles_by_day.each_with_index do |post,index| %>
+                  <li><%= link_to h(article.title), article_seo_path(post) %></li>
+                <% end %>
+              </ul>
+              <br class="clear"/>
+            </li>     
+          <% end %> 
+        </ul>
+      </div>
+    <% end %>
+    <br class="clear"/>
+  <% end %>
+</div>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'articles' %>
+<% end %>

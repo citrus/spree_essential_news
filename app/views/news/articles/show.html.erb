@@ -1,0 +1,33 @@
+<% content_for :sidebar do %>
+  <%= render :partial => 'sidebar' %>
+<% end %>
+
+<div class="post">
+  
+  <div class="post-title">
+    <h5><%= h @article.posted_at.strftime('%A %B %d, %Y').gsub(/\s0/, ' ') %></h5> 
+    <h1><%=h @article.title %></h1>
+  </div>
+  
+  <% if @article.has_images? %>     
+    <div class="post-images">
+      <% @article.images.each_with_index do |image, index| %>
+   	    <p><%= link_to image_tag(image.attachment.url(:medium), :alt => image.has_alt? ? image.alt : "#{@article.title} - Photo #{index + 1}"), image.attachment.url(:large), :id => "photo_#{index}" %></p>
+ 	    <% end %>
+    </div>
+  <% end %>   
+    
+  <%= @article.rendered_body %>  
+  
+  <div class="post-tags">
+    <h5>Tagged:</h5>
+    <p><%= @article.tags.collect{|tag| link_to(tag.name, search_articles_path(tag.name)) }.join(", ").html_safe %></p>
+  </div>
+
+  <% unless @article.products.empty? %>
+    <div class="post-products">
+      <%= render 'shared/products', :products => @article.products %>
+    </div>
+  <% end %>
+
+</div>
