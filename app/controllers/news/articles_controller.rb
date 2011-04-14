@@ -1,4 +1,4 @@
-class News::ArticlesController < Spree::BaseController
+class Blog::ArticlesController < Spree::BaseController
 
   helper :products
   

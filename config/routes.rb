@@ -10,9 +10,9 @@ Rails.application.routes.draw do
       get '/news/:year/:month/:day/:id' => 'articles#show',  :as => :full_article
     end
     
-    get '/blog/search/:query', :to => 'articles#search', :as => :search_articles, :query => /.*/
+    get '/news/search/:query', :to => 'articles#search', :as => :search_articles, :query => /.*/
         
-    resources :articles, :path => 'blog' do
+    resources :articles, :path => 'news' do
       get :archive, :on => :collection
     end
     

@@ -1,4 +1,4 @@
-class Admin::News::ArticlesController < Admin::ResourceController
+class Admin::Blog::ArticlesController < Admin::ResourceController
   
   #resource_controller
 

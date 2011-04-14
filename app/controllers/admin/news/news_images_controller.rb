@@ -1,4 +1,4 @@
-class Admin::News::ArticleImagesController < Admin::ResourceController
+class Admin::Blog::ArticleImagesController < Admin::ResourceController
   
   before_filter :load_data
 
