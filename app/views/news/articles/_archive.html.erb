@@ -13,7 +13,7 @@
               </span>
               <ul class="articles">
                 <% articles_by_day.each_with_index do |post,index| %>
-                  <li><%= link_to h(article.title), article_seo_path(post) %></li>
+                  <li><%= link_to h(article.title), article_seo_path(article) %></li>
                 <% end %>
               </ul>
               <br class="clear"/>

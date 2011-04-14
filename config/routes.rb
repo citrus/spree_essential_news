@@ -15,11 +15,9 @@ Rails.application.routes.draw do
     resources :articles, :path => 'news' do
       get :archive, :on => :collection
     end
-    
   end
   
   namespace :admin do
-    
     scope(:module => "News") do
       resources :articles do 
         resources :images,   :controller => "article_images" do
@@ -30,9 +28,6 @@ Rails.application.routes.draw do
         resources :products, :controller => "article_products"
       end
     end
-    
-    resources :uploads
-    
   end
   
 end

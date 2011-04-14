@@ -1,0 +1,37 @@
+en: 
+  article:
+    title: Title
+    posted_at: Posted At
+    body: Body
+    live: Published
+    tags: Tags
+  news:
+    home:
+      title: Latest News
+    archive: News Archive
+    articles:
+      index:
+        news: News
+        rss: Subscribe via RSS
+      archive:
+        go_to_store: "Shop the Store"
+        back_to_articles: "Back to the news"    
+      preview: 
+        read_more: Read More        
+      sidebar: 
+        recent_articles: Recent News
+        archives: Archive
+        view_archive: View Full Archive
+        tags: Tags        
+  admin:
+    news:
+      article_products:
+        index:
+          add_related_product: Add Related Products      
+    subnav:
+      articles: News Articles     
+    shared:
+      article_tabs:
+        editing_article: Editing Article
+        article_details: Article Details
+        related_products: Related Products

@@ -10,7 +10,7 @@
       <tr id="<%= dom_id article_product %>">
         <td><%= article_product.product.name %></td>
         <td width="70px">
-          <%= link_to_delete article_product, {:url => admin_article_product_url(post, article_product)} %>
+          <%= link_to_delete article_product, {:url => admin_article_product_url(article, article_product)} %>
         </td>
       </tr>
     <% end %>

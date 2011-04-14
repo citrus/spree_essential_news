@@ -1,4 +1,4 @@
-module Blog::ArticlesHelper
+module News::ArticlesHelper
 
   def article_seo_path(article)
     full_article_path(article.year, article.month, article.day, article.to_param)

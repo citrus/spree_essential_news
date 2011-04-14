@@ -8,9 +8,9 @@ xml.rss :version => "2.0" do
     for article in @articles
       xml.item do
         xml.title article.title
-        xml.description article_rss(post)
+        xml.description article_rss(article)
         xml.pubDate article.posted_at.to_s(:rfc822)
-        xml.link article_seo_path(post)
+        xml.link article_seo_path(article)
       end
     end
   end

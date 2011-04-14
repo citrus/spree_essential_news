@@ -6,7 +6,7 @@
 
 <%= form.field_container :posted_at do %>
   <%= form.label :posted_at, t("article.posted_at") %><br />
-  <%= form.text_field :posted_at, :class => 'text' %><br />
+  <%= form.text_field :posted_at, :class => 'text', :value => (@article.posted_at.to_s(:long) unless @article.new_record?) %><br />
   <%= error_message_on :post, :posted_at %>
 <% end %>
 
@@ -32,7 +32,7 @@
   <script type="text/javascript">
   //<![CDATA[
     $(document).ready(function() {
-      $('#article_articleed_at').autodate();
+      $('#article_posted_at').autodate();
       $('#article_body').markItUp(markdownSettings);
     }); 
   //]]>

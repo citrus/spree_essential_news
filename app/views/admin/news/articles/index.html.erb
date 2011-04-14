@@ -25,8 +25,8 @@
   <tbody>
     <%- @collection.each do |article| %>
     <tr id="<%= dom_id article %>">
-      <td><%=link_to article.title, object_url(post) %></td>
-      <td><%=link_to article.posted_at.strftime('%x %X'), object_url(post) %></td>
+      <td><%=link_to article.title, object_url(article) %></td>
+      <td><%=link_to article.posted_at.strftime('%x %X'), object_url(article) %></td>
       <td><%= article.live %></td>
       <td>
       	<%= link_to_edit article %> &nbsp;

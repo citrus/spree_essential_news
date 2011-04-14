@@ -1,5 +1,13 @@
 module SpreeEssentialNews
   
+  def self.tab
+    [:articles, :article_images, :article_products ]
+  end
+  
+  def self.sub_tab
+    [:articles, { :label => 'admin.subnav.articles', :match_path => '/articles' }]
+  end
+  
   class Engine < Rails::Engine
 
     config.autoload_paths += %W(#{config.root}/lib)
@@ -20,10 +28,6 @@ module SpreeEssentialNews
     
   end
   
-  #class CustomHooks < Spree::ThemeSupport::HookListener
-  #  
-  #  insert_after :admin_tabs,  'admin/shared/contents_tab'
-  #
-  #end
-  
 end
+
+SpreeEssentials.register SpreeEssentialNews
