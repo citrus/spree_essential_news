@@ -34,7 +34,7 @@ class News::ArticlesController < Spree::BaseController
 		query = params[:query].gsub(/%46/, '.')	
 		@articles = Article.live.tagged_with(query).paginate(:page => params[:page], :per_page => Article.per_page)
 		get_tags		
-		render :template => 'blog/articles/index'
+		render :template => 'news/articles/index'
 	end
 	
   def show
