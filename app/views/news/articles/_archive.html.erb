@@ -1,4 +1,4 @@
-<div class="post-archive">
+<div class="article-archive">
   <% articles.group_by(&:year).each do |year, articles_by_year| %>
     <h4 class="year"><%= link_to year, article_date_path(year) %></h4>
     <% index = 0 %>
@@ -12,7 +12,7 @@
                 <%= link_to day, article_date_path(year, month, day) %>
               </span>
               <ul class="articles">
-                <% articles_by_day.each_with_index do |post,index| %>
+                <% articles_by_day.each_with_index do |article, index| %>
                   <li><%= link_to h(article.title), article_seo_path(article) %></li>
                 <% end %>
               </ul>
