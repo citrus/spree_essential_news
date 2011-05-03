@@ -30,4 +30,4 @@ module SpreeEssentialNews
   
 end
 
-SpreeEssentials.register SpreeEssentialNews
+SpreeEssentials.register :news, SpreeEssentialNews
