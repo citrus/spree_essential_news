@@ -1,3 +1,7 @@
+require 'spree_essentials'
+require 'acts-as-taggable-on'
+#require 'sqlite3' unless Rails.env == 'production'
+
 module SpreeEssentialNews
   
   def self.tab
